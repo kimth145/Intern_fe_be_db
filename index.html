@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Intern</title>
+    <script>
+      async function onLoad() {
+        const response = await fetch("http://localhost:3001/menu");
+        const result = await response.json();
+
+        for (let index = 0; index < result.length; index++) {
+          const element = result[index];
+          document.getElementsByTagName("div")[0].innerText =
+            document.getElementsByTagName("div")[0].innerText +
+            element.fruit_img;
+        }
+      }
+    </script>
+  </head>
+
+  <body onload="onLoad();">
+    <div></div>
+  </body>
+</html>
