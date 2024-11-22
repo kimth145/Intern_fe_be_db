@@ -3,7 +3,9 @@
     <title>Intern</title>
     <script>
       async function onLoad() {
-        const response = await fetch("http://localhost:3001/menu");
+        const response = await fetch(
+          "https://intern-fe-be-db.onrender.com/menu"
+        );
         const result = await response.json();
 
         for (let index = 0; index < result.length; index++) {

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const pg = require("pg");
 const app = express();
+const port = process.env.port || 3001;
 
 const client = new pg.Pool({
   //   user: "postgres",
@@ -27,6 +28,6 @@ app.get("/menu", async (req, res) => {
   res.send(result.rows);
 });
 
-app.listen(3001, () => {
-  console.log("connected on port 3001");
+app.listen(port, () => {
+  console.log("connected on port " + port);
 });
